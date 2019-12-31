@@ -1,0 +1,14 @@
+﻿<settings-container>
+  <vertical size-delta-y='50'>
+    <vertical child-expand-height='false' pref-height='5'>
+      <text text='Better Latency Adjuster' font-size='8'></text>
+      <text text='By PixelBoom' font-size='4'></text>
+    </vertical>
+    <bool-setting text='Override Audio Latency'></bool-setting>
+    <slider-setting text='Audio Latency Offset' integer-only='true' increment='1' min='0' max='300'></slider-setting>
+    <horizontal pad-left='10' pad-right='10' spacing='20' child-expand-width='false'>
+      <image id='flashImage' pref-width='10' min-width='10' size-delta-x='10'></image>
+      <text text='100' id='countdownText'></text>
+    </horizontal>
+  </vertical>
+</settings-container>

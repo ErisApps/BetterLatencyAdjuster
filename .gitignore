@@ -1,0 +1,6 @@
+## Ignore References folder
+References/
+Resources/
+obj/
+bin/
+.vs/

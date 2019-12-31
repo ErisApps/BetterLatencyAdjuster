@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
+  "author": "",
+  "description": "",
+  "gameVersion": "1.6.0",
+  "id": "BetterLatencyAdjuster",
+  "name": "BetterLatencyAdjuster",
+  "version": "0.0.1",
+  "dependsOn": {
+
+  },
+  "features": []
+}
