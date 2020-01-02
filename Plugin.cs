@@ -16,7 +16,7 @@ namespace BetterLatencyAdjuster
     public class Plugin : IBeatSaberPlugin
     {
         internal static string Name => "BetterLatencyAdjuster";
-
+        private SettingsViewController settingsView;
         public void Init(IPALogger logger)
         {
             Logger.log = logger;
@@ -53,7 +53,8 @@ namespace BetterLatencyAdjuster
         public void OnApplicationStart()
         {
             Logger.log.Debug("OnApplicationStart");
-            BSMLSettings.instance.AddSettingsMenu("Adjust Latency", "BetterLatencyAdjuster.UI.Settings.bsml", SettingsViewController.instance);
+            settingsView = SettingsViewController.instance;
+            BSMLSettings.instance.AddSettingsMenu("Adjust Latency", "BetterLatencyAdjuster.UI.Settings.bsml", settingsView);
         }
 
         public void OnApplicationQuit()
@@ -62,47 +63,32 @@ namespace BetterLatencyAdjuster
 
         }
 
-        /// <summary>
-        /// Runs at a fixed intervalue, generally used for physics calculations. 
-        /// </summary>
-        public void OnFixedUpdate()
-        {
-
-        }
-
-        /// <summary>
-        /// This is called every frame.
-        /// </summary>
         public void OnUpdate()
         {
-
+            try
+            {
+                settingsView.FlashImage();
+            }
+            catch (Exception e)
+            {
+            }
         }
 
-        /// <summary>
-        /// Called when the active scene is changed.
-        /// </summary>
-        /// <param name="prevScene">The scene you are transitioning from.</param>
-        /// <param name="nextScene">The scene you are transitioning to.</param>
-        public void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
+        public void OnFixedUpdate()
         {
-
         }
 
-        /// <summary>
-        /// Called when the a scene's assets are loaded.
-        /// </summary>
-        /// <param name="scene"></param>
-        /// <param name="sceneMode"></param>
         public void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
         {
-
-
-
         }
 
         public void OnSceneUnloaded(Scene scene)
         {
-
         }
+
+        public void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
+        {
+        }
+
     }
 }
