@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.1.2.0.1\lib\net472\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="BSML">
       <HintPath>F:\SteamLibrary\steamapps\common\Beat Saber\Plugins\BSML.dll</HintPath>
     </Reference>
@@ -96,6 +99,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HarmonyPatches\LeaveControllerPatch.cs" />
+    <Compile Include="HarmonyPatches\CurrentControllerPatch.cs" />
+    <Compile Include="HarmonyPatches\SoundOverridePatch.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="PluginConfig.cs" />
@@ -109,6 +115,7 @@
   <ItemGroup>
     <None Include="CreateJunctions.bat" />
     <None Include=".gitignore" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--Build Targets-->
