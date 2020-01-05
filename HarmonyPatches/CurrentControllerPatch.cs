@@ -1,24 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Xml;
+using BeatSaberMarkupLanguage;
+using BetterLatencyAdjuster.UI;
 using Harmony;
-using HMUI;
+using UnityEngine;
 
 namespace BetterLatencyAdjuster.HarmonyPatches
 {
-    [HarmonyPatch(typeof(NavigationController), "LayoutViewControllers",
+    [HarmonyPatch(typeof(BSMLParser), "Parse",
         new Type[] { 
-            typeof(List<ViewController>)
+            typeof(XmlNode), typeof(GameObject), typeof(object)
         })]
     class CurrentControllerPatch
     {
-        static void Prefix(ref List<ViewController> viewControllers)
+        public const string VIEW_CONTROLLER_NAME = "BetterLatencyAdjuster";
+        public static int instanceID { get; private set; } // The ID of the game object of the Settings View Controller
+        static void Postfix(ref object host, ref BSMLParser __instance, ref GameObject parent)
         {
-            try
-            {
-                if (viewControllers.Exists(a => a.GetType().ToString() == "BeatSaberMarkupLanguage.Settings.UI.ViewControllers.SettingsMenuListViewController"))
-                    Plugin.enableSettings();
-            }
-            catch (Exception) { }
+            if (host.GetType() == typeof(SettingsViewController))
+                instanceID = parent.GetInstanceID();
         }
     }
 }

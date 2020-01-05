@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using IPA;
-using IPA.Config;
-using IPA.Utilities;
 using UnityEngine.SceneManagement;
-using UnityEngine;
 using IPALogger = IPA.Logging.Logger;
 using BeatSaberMarkupLanguage.Settings;
 using BetterLatencyAdjuster.UI;
@@ -21,6 +15,7 @@ namespace BetterLatencyAdjuster
         public const string HarmonyId = "com.github.rithik-b.BetterLatencyAdjuster";
         internal static HarmonyInstance harmony;
         private static SettingsViewController settingsViewController = SettingsViewController.instance;
+
         public void Init(IPALogger logger)
         {
             Logger.log = logger;
@@ -94,6 +89,7 @@ namespace BetterLatencyAdjuster
         public void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
         {
         }
+        
         public static void ApplyHarmonyPatches()
         {
             try

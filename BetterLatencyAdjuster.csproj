@@ -99,8 +99,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HarmonyPatches\LeaveControllerPatch.cs" />
     <Compile Include="HarmonyPatches\CurrentControllerPatch.cs" />
+    <Compile Include="HarmonyPatches\EnterControllerPatch.cs" />
     <Compile Include="HarmonyPatches\SoundOverridePatch.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Logger.cs" />

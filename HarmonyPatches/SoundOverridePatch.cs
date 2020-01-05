@@ -13,7 +13,6 @@ namespace BetterLatencyAdjuster.HarmonyPatches
         {
             UI.SettingsViewController.setSource(____audioSource);
             UI.SettingsViewController.setClip(____clickSounds[0]);
-            Logger.log.Critical("Set!");
         }
     }
 }
