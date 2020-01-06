@@ -1,16 +1,18 @@
 # BetterLatencyAdjuster
-A better gui to adjust audio latency in beat saber. 
-Instead of the bouncing ball UI in the base game, this uses a black square that flashes white whenever audio is played, 
+- A better gui to adjust audio latency in beat saber. (As suggested by Mdot)
+- Instead of the bouncing ball UI in the base game, this uses a black square that flashes white whenever audio is played, 
 making it easier to adjust the latency offset.
 
 ## How to use
 - Go to Adjust Latency under Mod Settings
 - Enable "Override Audio Latency"
 - Move the slider around until you hear the audio at the same time as the box flashing
+![](https://i.imgur.com/Cy8JxE5.png)
 - Click Apply and Ok
 - Go to Settings>Audio Latency (the ingame latency adjuster) and just click Apply and Ok for the changes to take effect in game (the values from the mod settings should automatically transfer over after)
+![](https://i.imgur.com/YLz9dne.png)
 - To disable the override, disable "Override Audio Latency" in the Mod's Settings **first**, then do it in the game's settings
-- If you uninstall the mod and don't want to keep the latency override, you must disable it from the game's settings
+- If you uninstall the mod and don't want to keep the latency override, you must disable the latency override from the game's settings
 
 ## Download and Installation instructions
 - Download the latest version of the mod (v1.0.0) [here](https://github.com/rithik-b/BetterLatencyAdjuster/releases/tag/1.0.0 "here")
