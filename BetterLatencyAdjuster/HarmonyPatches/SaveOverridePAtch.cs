@@ -10,13 +10,13 @@ namespace BetterLatencyAdjuster.HarmonyPatches
         })]
     class SaveOverridePatch
     {
-        private const float MILLISECONDS_TO_SECONDS = 1 / 1000;
+        private const float MILLISECONDS_TO_SECONDS = 1000;
         static void Postfix(ref AudioLatencyViewController __instance, ref FloatSO ____audioLatency)
         {
             if(Plugin.getCheckboxValue())
             {
                 __instance.HandleOverrideAudioLatencyToggleValueChanged(true);
-                __instance.SliderValueDidChange(null, (float) Plugin.getSliderValue() * MILLISECONDS_TO_SECONDS);
+                __instance.SliderValueDidChange(null, (float) Plugin.getSliderValue() / (float) MILLISECONDS_TO_SECONDS);
             }
         }
     }
