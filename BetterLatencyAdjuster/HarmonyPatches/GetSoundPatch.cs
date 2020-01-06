@@ -7,7 +7,7 @@ namespace BetterLatencyAdjuster.HarmonyPatches
     [HarmonyPatch(typeof(BasicUIAudioManager), "Start",
         new Type[] { 
         })]
-    class SoundOverridePatch
+    class GetSoundPatch
     {
         static void Postfix(ref AudioSource ____audioSource, ref AudioClip[] ____clickSounds)
         {

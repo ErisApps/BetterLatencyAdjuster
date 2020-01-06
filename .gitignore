@@ -1,7 +1,8 @@
 ## Ignore References folder
-References/
-Resources/
-obj/
-bin/
-.vs/
-packages/
+BetterLatencyAdjuster/References/
+BetterLatencyAdjuster/Resources/
+BetterLatencyAdjuster/obj/
+BetterLatencyAdjuster/bin/
+BetterLatencyAdjuster/.vs/
+BetterLatencyAdjuster/packages/
+BetterLatencyAdjuster/CreateJunctions.bat

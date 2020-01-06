@@ -103,7 +103,7 @@
     <Compile Include="HarmonyPatches\SaveOverridePatch.cs" />
     <Compile Include="HarmonyPatches\CurrentControllerPatch.cs" />
     <Compile Include="HarmonyPatches\EnterControllerPatch.cs" />
-    <Compile Include="HarmonyPatches\SoundOverridePatch.cs" />
+    <Compile Include="HarmonyPatches\GetSoundPatch.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,7 +115,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CreateJunctions.bat" />
-    <None Include=".gitignore" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -22,47 +22,10 @@ namespace BetterLatencyAdjuster
             harmony = HarmonyInstance.Create(HarmonyId);
         }
 
-        #region BSIPA Config
-        // Uncomment to use BSIPA's config
-        //internal static Ref<PluginConfig> config;
-        //internal static IConfigProvider configProvider;
-        //public void Init(IPALogger logger, [Config.Prefer("json")] IConfigProvider cfgProvider)
-        //{
-        //    Logger.log = logger;
-        //    Logger.log.Debug("Logger initialised.");
-
-        //    configProvider = cfgProvider;
-
-        //    config = configProvider.MakeLink<PluginConfig>((p, v) =>
-        //    {
-        //        // Build new config file if it doesn't exist or RegenerateConfig is true
-        //        if (v.Value == null || v.Value.RegenerateConfig)
-        //        {
-        //            Logger.log.Debug("Regenerating PluginConfig");
-        //            p.Store(v.Value = new PluginConfig()
-        //            {
-        //                // Set your default settings here.
-        //                RegenerateConfig = false
-        //            });
-        //        }
-        //        config = v;
-        //    });
-        //}
-        #endregion
-        public void OnApplicationStart()
+       public void OnApplicationStart()
         {
             BSMLSettings.instance.AddSettingsMenu("Adjust Latency", "BetterLatencyAdjuster.UI.Settings.bsml", settingsViewController);
             ApplyHarmonyPatches();
-        }
-
-        public static void disableSettings()
-        {
-            settingsViewController.enabled = false;
-        }
-
-        public static void enableSettings()
-        {
-            settingsViewController.enabled = settingsViewController.currentCheckboxVal;
         }
 
         public void OnApplicationQuit()
@@ -112,6 +75,16 @@ namespace BetterLatencyAdjuster
         public static int getSliderValue()
         {
             return settingsViewController.sliderValue;
+        }
+
+        public static void disableSettings()
+        {
+            settingsViewController.enabled = false;
+        }
+
+        public static void enableSettings()
+        {
+            settingsViewController.enabled = settingsViewController.currentCheckboxVal;
         }
     }
 }

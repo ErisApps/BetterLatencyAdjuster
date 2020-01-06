@@ -1,9 +1,6 @@
 ﻿using System;
-using BeatSaberMarkupLanguage;
-using BetterLatencyAdjuster.UI;
 using Harmony;
 using HMUI;
-using UnityEngine;
 
 namespace BetterLatencyAdjuster.HarmonyPatches
 {
@@ -13,13 +10,13 @@ namespace BetterLatencyAdjuster.HarmonyPatches
         })]
     class SaveOverridePatch
     {
-        static void Postfix(ref AudioLatencyViewController __instance)
+        private const float MILLISECONDS_TO_SECONDS = 1 / 1000;
+        static void Postfix(ref AudioLatencyViewController __instance, ref FloatSO ____audioLatency)
         {
-            Logger.log.Critical("Activated");
             if(Plugin.getCheckboxValue())
             {
                 __instance.HandleOverrideAudioLatencyToggleValueChanged(true);
-                __instance.SliderValueDidChange(null, Plugin.getSliderValue());
+                __instance.SliderValueDidChange(null, (float) Plugin.getSliderValue() * MILLISECONDS_TO_SECONDS);
             }
         }
     }

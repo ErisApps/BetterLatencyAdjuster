@@ -77,12 +77,12 @@ namespace BetterLatencyAdjuster.UI
 
         void Update()
         {
-            if (Time.time * 1000 >= prevUpdate)
+            if (Time.time * 1000 >= prevUpdate) //If time has passed
             {
                 int currentUpdate = Mathf.FloorToInt(Time.time * 1000);
-                int difference = currentUpdate - prevUpdate;
+                int difference = currentUpdate - prevUpdate; //Calculate difference in time
                 prevUpdate = Mathf.FloorToInt(Time.time * 1000);
-                flashImage(difference);
+                flashImage(difference); //Pass difference to flash image
             }
         }
 
@@ -90,7 +90,7 @@ namespace BetterLatencyAdjuster.UI
         {
             try
             {
-                currentInterval -= difference;
+                currentInterval -= difference; //Interval reduces based on time passed since last update
                 if (currentInterval > 0)
                     countDownText.text = currentInterval.ToString();
                 else
@@ -111,7 +111,7 @@ namespace BetterLatencyAdjuster.UI
                     hasReachedCountdown = false;
                 }
             }
-            catch(Exception) { }
+            catch (Exception) { }
         }
 
         public static void setSource(AudioSource audioSource)
