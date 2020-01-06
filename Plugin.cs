@@ -62,7 +62,7 @@ namespace BetterLatencyAdjuster
 
         public static void enableSettings()
         {
-            settingsViewController.enabled = true;
+            settingsViewController.enabled = settingsViewController.currentCheckboxVal;
         }
 
         public void OnApplicationQuit()
