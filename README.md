@@ -10,12 +10,12 @@ making it easier to adjust the latency offset.
 ![](https://i.imgur.com/Cy8JxE5.png)
 - Click Apply and Ok
 - Go to Settings>Audio Latency (the ingame latency adjuster) and just click Apply and Ok for the changes to take effect in game (the values from the mod settings should automatically transfer over after)
-![](https://i.imgur.com/YLz9dne.png)
+![](https://i.imgur.com/JHhxjVc.png)
 - To disable the override, disable "Override Audio Latency" in the Mod's Settings **first**, then do it in the game's settings
 - If you uninstall the mod and don't want to keep the latency override, you must disable the latency override from the game's settings
 
 ## Download and Installation instructions
-- Download the latest version of the mod (v1.0.0) [here](https://github.com/rithik-b/BetterLatencyAdjuster/releases/tag/1.0.0 "here")
+- Download the latest version of the mod (v1.0.1) [here](https://github.com/rithik-b/BetterLatencyAdjuster/releases/tag/1.0.1 "here")
 - Get the latest version of BSML and BS Utils from [ModAssistant](https://github.com/Assistant/ModAssistant "ModAssistant")
 - Drag and drop the dll file into the "Plugins" folder of your Beat Saber Installation Directory
 
