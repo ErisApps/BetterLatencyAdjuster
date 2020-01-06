@@ -13,7 +13,6 @@ namespace BetterLatencyAdjuster.HarmonyPatches
         })]
     class CurrentControllerPatch
     {
-        public const string VIEW_CONTROLLER_NAME = "BetterLatencyAdjuster";
         public static int instanceID { get; private set; } // The ID of the game object of the Settings View Controller
         static void Postfix(ref object host, ref BSMLParser __instance, ref GameObject parent)
         {

@@ -103,5 +103,15 @@ namespace BetterLatencyAdjuster
                 Logger.log.Debug(ex);
             }
         }
+
+        public static bool getCheckboxValue()
+        {
+            return settingsViewController.checkboxValue;
+        }
+
+        public static int getSliderValue()
+        {
+            return settingsViewController.sliderValue;
+        }
     }
 }
