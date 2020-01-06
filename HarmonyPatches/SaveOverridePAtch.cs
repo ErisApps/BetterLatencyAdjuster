@@ -19,7 +19,7 @@ namespace BetterLatencyAdjuster.HarmonyPatches
             if(Plugin.getCheckboxValue())
             {
                 __instance.HandleOverrideAudioLatencyToggleValueChanged(true);
-                __instance.SliderValueDidChange(null, 300);
+                __instance.SliderValueDidChange(null, Plugin.getSliderValue());
             }
         }
     }
