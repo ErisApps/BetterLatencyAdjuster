@@ -15,7 +15,7 @@ making it easier to adjust the latency offset.
 - If you uninstall the mod and don't want to keep the latency override, you must disable the latency override from the game's settings
 
 ## Download and Installation instructions
-- Download the latest version of the mod (v1.0.1) [here](https://github.com/rithik-b/BetterLatencyAdjuster/releases/tag/1.0.1 "here")
+- Download the latest version of the mod (v1.0.2) [here](https://github.com/rithik-b/BetterLatencyAdjuster/releases/tag/1.0.2 "here")
 - Get the latest version of BSML and BS Utils from [ModAssistant](https://github.com/Assistant/ModAssistant "ModAssistant")
 - Drag and drop the dll file into the "Plugins" folder of your Beat Saber Installation Directory
 
