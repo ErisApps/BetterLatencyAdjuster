@@ -1,0 +1,17 @@
+<settings-container xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+					xsi:noNamespaceSchemaLocation='https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'>
+	<vertical size-delta-y='50'>
+		<vertical child-expand-height='false' pref-height='5'>
+			<text text='Better Latency Adjuster' font-size='7'/>
+			<text text='By PixelBoom' font-size='3'/>
+		</vertical>
+		<vertical>
+			<checkbox-setting text='Override Audio Latency' value='checkboxValue' on-change='checkboxOnChange' apply-on-change="true"/>
+			<slider-setting text='Audio Latency Offset' integer-only='true' increment='1' min='0' max='300' value='slider-value' apply-on-change="true"/>
+			<horizontal pad-left='20' pad-right='20' spacing='20' child-expand-width='false'>
+				<raw-image id='flashImage' pref-width='10' min-width='10' size-delta-x='10'/>
+				<text text='100' id='countdownText'/>
+			</horizontal>
+		</vertical>
+	</vertical>
+</settings-container>
