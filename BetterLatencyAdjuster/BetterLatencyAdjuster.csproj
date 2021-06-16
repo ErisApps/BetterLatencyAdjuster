@@ -96,14 +96,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="Directory.Build.props" Condition="Exists('Directory.Build.props')"/>
-		<None Include="Directory.Build.targets" Condition="Exists('Directory.Build.targets')"/>
-		<None Include="BetterLatencyAdjuster.csproj.user" Condition="Exists('BetterLatencyAdjuster.csproj.user')"/>
+		<None Include="Directory.Build.props" Condition="Exists('Directory.Build.props')" />
+		<None Include="Directory.Build.targets" Condition="Exists('Directory.Build.targets')" />
+		<None Include="BetterLatencyAdjuster.csproj.user" Condition="Exists('BetterLatencyAdjuster.csproj.user')" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="manifest.json"/>
-		<EmbeddedResource Include="UI\*.bsml"/>
+		<EmbeddedResource Include="manifest.json" />
+		<EmbeddedResource Include="Settings\UI\Settings.bsml" />
 	</ItemGroup>
 
 	<ItemGroup>
