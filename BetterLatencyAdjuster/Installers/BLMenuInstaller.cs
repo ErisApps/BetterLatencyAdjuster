@@ -1,4 +1,4 @@
-﻿using BetterLatencyAdjuster.Settings.UI;
+using BetterLatencyAdjuster.Settings.UI;
 using IPA.Logging;
 using SiraUtil;
 using Zenject;
@@ -18,8 +18,8 @@ namespace BetterLatencyAdjuster.Installers
 		{
 			Container.BindLoggerAsSiraLogger(_logger);
 
-			Container.BindInterfacesAndSelfTo<SettingsController>().AsSingle();
-			Container.BindInterfacesTo<SettingsControllerManager>().AsSingle();
+			Container.Bind<SettingsController>().FromNewComponentOnNewGameObject().AsSingle();
+			Container.BindInterfacesAndSelfTo<SettingsControllerManager>().AsSingle();
 		}
 	}
 }

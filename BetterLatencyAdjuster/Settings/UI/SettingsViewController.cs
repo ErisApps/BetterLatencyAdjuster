@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using BeatSaberMarkupLanguage.Attributes;
+using HMUI;
 using IPA.Utilities;
 using SiraUtil.Tools;
 using TMPro;
@@ -10,7 +11,7 @@ using Object = UnityEngine.Object;
 
 namespace BetterLatencyAdjuster.Settings.UI
 {
-	internal class SettingsController : ITickable
+	internal class SettingsController : MonoBehaviour
 	{
 		private static readonly FieldAccessor<MenuTransitionsHelper, MainSettingsModelSO>.Accessor MainSettingsModelAccessor =
 			FieldAccessor<MenuTransitionsHelper, MainSettingsModelSO>.GetAccessor("_mainSettingsModel");
@@ -69,6 +70,9 @@ namespace BetterLatencyAdjuster.Settings.UI
 			_siraLog.Logger.Notice($"Override: {OverrideAudioLatency}; Latency: {AudioLatency}");
 		}
 
+		[UIComponent("root")]
+		private RectTransform rootTransform = null!;
+
 		[UIComponent("flashImage")]
 		private RawImage image = null!;
 
@@ -89,6 +93,9 @@ namespace BetterLatencyAdjuster.Settings.UI
 			_whiteTexture.LoadImage(_whiteImage);
 			_currentInterval = INTERVAL;
 			countDownText.text = _currentInterval.ToString("F0");
+
+			gameObject.name = "BLAdjusterSettings";
+			transform.SetParent(rootTransform);
 		}
 
 		[UIAction("#apply")]
@@ -146,7 +153,7 @@ namespace BetterLatencyAdjuster.Settings.UI
 		}
 
 		// TODO:
-		public void Tick()
+		public void Update()
 		{
 			if (Time.time * 1000 >= _prevUpdate) //If time has passed
 			{
