@@ -70,13 +70,13 @@ namespace BetterLatencyAdjuster.Settings.UI
 		}
 
 		[UIComponent("root")]
-		private RectTransform rootTransform = null!;
+		private RectTransform _rootTransform = null!;
 
 		[UIComponent("flashImage")]
-		private RawImage image = null!;
+		private RawImage _image = null!;
 
 		[UIComponent("countdownText")]
-		private TextMeshProUGUI countDownText = null!;
+		private TextMeshProUGUI _countDownText = null!;
 
 		[UIValue("checkboxValue")]
 		internal bool OverrideAudioLatency { get; set; }
@@ -87,14 +87,14 @@ namespace BetterLatencyAdjuster.Settings.UI
 		[UIAction("#post-parse")]
 		internal void Setup()
 		{
-			image.texture = _blackTexture;
+			_image.texture = _blackTexture;
 			_blackTexture.LoadImage(_blackImage);
 			_whiteTexture.LoadImage(_whiteImage);
 			_currentInterval = INTERVAL;
-			countDownText.text = _currentInterval.ToString("F0");
+			_countDownText.text = _currentInterval.ToString("F0");
 
 			gameObject.name = "BLAdjusterSettings";
-			transform.SetParent(rootTransform);
+			transform.SetParent(_rootTransform);
 		}
 
 		[UIAction("#apply")]
@@ -111,8 +111,8 @@ namespace BetterLatencyAdjuster.Settings.UI
 			if (!newVal)
 			{
 				_currentInterval = INTERVAL;
-				countDownText.text = _currentInterval.ToString("F0");
-				image.texture = _blackTexture;
+				_countDownText.text = _currentInterval.ToString("F0");
+				_image.texture = _blackTexture;
 			}
 		}
 
@@ -121,7 +121,7 @@ namespace BetterLatencyAdjuster.Settings.UI
 			try
 			{
 				_currentInterval -= difference; //Interval reduces based on time passed since last update
-				countDownText.text = _currentInterval > 0 ? _currentInterval.ToString("F0") : "0";
+				_countDownText.text = _currentInterval > 0 ? _currentInterval.ToString("F0") : "0";
 
 				if (_currentInterval <= AudioLatency && !_hasReachedCountdown)
 				{
@@ -135,13 +135,13 @@ namespace BetterLatencyAdjuster.Settings.UI
 
 				if (_currentInterval <= 0)
 				{
-					image.texture = _whiteTexture;
+					_image.texture = _whiteTexture;
 				}
 
 				if (_currentInterval <= -SOUND_INTERVAL)
 				{
 					_currentInterval = INTERVAL;
-					image.texture = _blackTexture;
+					_image.texture = _blackTexture;
 					_hasReachedCountdown = false;
 				}
 			}
@@ -151,7 +151,6 @@ namespace BetterLatencyAdjuster.Settings.UI
 			}
 		}
 
-		// TODO:
 		public void Update()
 		{
 			if (Time.time * 1000 >= _prevUpdate) //If time has passed
