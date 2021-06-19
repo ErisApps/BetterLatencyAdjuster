@@ -3,7 +3,7 @@
 	<vertical size-delta-y='50'>
 		<vertical child-expand-height='false' pref-height='5'>
 			<text text='Better Latency Adjuster' font-size='7'/>
-			<text text='By PixelBoom' font-size='3'/>
+			<text text='By Eris and PixelBoom' font-size='3'/>
 		</vertical>
 		<vertical>
 			<checkbox-setting text='Override Audio Latency' value='checkboxValue' on-change='checkboxOnChange' apply-on-change="true"/>
