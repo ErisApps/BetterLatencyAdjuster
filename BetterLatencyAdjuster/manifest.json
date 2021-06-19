@@ -1,14 +1,17 @@
 ﻿{
 	"$schema": "https://raw.githubusercontent.com/beat-saber-modding-group/BSIPA-MetadataFileSchema/master/Schema.json",
-	"author": "PixelBoom",
+	"author": "Eris & PixelBoom",
 	"description": "A better latency adjuster UI for Beat Saber",
 	"gameVersion": "1.16.2",
 	"id": "BetterLatencyAdjuster",
 	"name": "BetterLatencyAdjuster",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"dependsOn": {
 		"BSIPA": "^4.1.6",
 		"BeatSaberMarkupLanguage": "^1.5.3",
 		"SiraUtil": "^2.5.5"
+	},
+	"links": {
+		"project-source": "https://github.com/ErisApps/BetterLatencyAdjuster"
 	}
 }
