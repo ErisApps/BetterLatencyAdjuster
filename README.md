@@ -19,7 +19,7 @@ The installation is fairly simple.
 
 ## How to use
 1. Go to Adjust Latency under Mod Settings
-2. Enable "Override Audio Latency"
+2. Enable "Override Audio Latency" (if you had enabled it in the basegame settings, it will already be enabled)
 3. Move the slider around until you hear the audio at the same time as the box flashing
 4. Once you're satisfied with the result, click Ok.
 ![Screenshot of the mod' settings view](https://i.imgur.com/Cy8JxE5.png)
