@@ -1,7 +1,7 @@
 # BetterLatencyAdjuster
 
-- A better gui to adjust audio latency in beat saber. (As suggested by Mdot)
-- Instead of the bouncing ball UI in the base game, this uses a black square that flashes white whenever audio is played,
+This mod provides a better (or at least slightly different) UI to adjust audio latency in beat saber.
+Instead of the bouncing ball UI in the base game, this uses a black square that flashes white whenever audio is played,
 making it easier to adjust the latency offset.
 
 ## Download and installation instructions
