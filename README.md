@@ -48,3 +48,9 @@ This can be done using either of the following options:
 	</PropertyGroup>
 </Project>
 ```
+
+## Credits
+Credit where credit is due:
+
+- [@PixelBoom](https://github.com/rithik-b) for developing the original mod
+- @Mdot for giving feedback during creation of the original mod
