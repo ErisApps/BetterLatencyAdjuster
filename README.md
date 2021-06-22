@@ -29,7 +29,7 @@ The installation is fairly simple.
 - If you uninstall the mod and don't want to keep the latency override, you can still disable the latency override from the game's settings.
 
 ## Issues and Support
-If you encounter any issues with this mod, please create an issue on Github using the issues tab above (and DM me on Discord Eris#4747 so it doesn't take me like a month to realize there's an issue...) and I'll try to get to it as soon as I can.
+If you encounter any issues with this mod, please create an issue on Github using the issues tab above _and DM me on Discord (Eris#4747) so it doesn't take me like a month to realize there's an issue..._ and I'll try to get to it as soon as I can.
 For support with the mod, ask the supports in the #pc-help channel (or mention me in said channel) in the [BSMG discord](discord.gg/beatsabermods).
 
 ## Developers
