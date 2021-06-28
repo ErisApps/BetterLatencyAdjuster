@@ -55,6 +55,7 @@ namespace BetterLatencyAdjuster.Settings.UI
 				{
 					var visualMetronome = VisualMetronomeAccessor(ref audioLatencyViewController);
 					_audioSource = Object.Instantiate(AudioSourceAccessor(ref visualMetronome));
+					_audioSource.gameObject.GetComponent<VisualMetronome>().enabled = false;
 					_audioSource.Stop();
 					_audioSource.loop = false;
 					_audioSource.playOnAwake = false;
@@ -95,6 +96,7 @@ namespace BetterLatencyAdjuster.Settings.UI
 
 			gameObject.name = "BLAdjusterSettings";
 			transform.SetParent(_rootTransform);
+			_audioSource.transform.SetParent(_rootTransform);
 		}
 
 		[UIAction("#apply")]
