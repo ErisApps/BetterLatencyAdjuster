@@ -1,4 +1,4 @@
-﻿{
+{
 	"$schema": "https://raw.githubusercontent.com/beat-saber-modding-group/BSIPA-MetadataFileSchema/master/Schema.json",
 	"author": "Eris & PixelBoom",
 	"description": "A better latency adjuster UI for Beat Saber",
