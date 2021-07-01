@@ -1,5 +1,4 @@
-﻿using System;
-using BeatSaberMarkupLanguage.Settings;
+using System;
 using Zenject;
 
 namespace BetterLatencyAdjuster.Settings.UI
@@ -16,7 +15,6 @@ namespace BetterLatencyAdjuster.Settings.UI
 
 		public void Initialize()
 		{
-			BSMLSettings.instance.AddSettingsMenu("<size=85%>BetterLatencyAdjuster", "BetterLatencyAdjuster.Settings.UI.Settings.bsml", _settingsHost);
 		}
 
 		public void Dispose()
@@ -26,7 +24,6 @@ namespace BetterLatencyAdjuster.Settings.UI
 				return;
 			}
 
-			BSMLSettings.instance.RemoveSettingsMenu(_settingsHost);
 			_settingsHost = null!;
 		}
 	}

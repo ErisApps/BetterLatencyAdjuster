@@ -17,9 +17,7 @@ namespace BetterLatencyAdjuster.Installers
 		public override void InstallBindings()
 		{
 			Container.BindLoggerAsSiraLogger(_logger);
-
-			Container.Bind<SettingsController>().FromNewComponentOnNewGameObject().AsSingle();
-			Container.BindInterfacesAndSelfTo<SettingsControllerManager>().AsSingle();
+			Container.BindInterfacesAndSelfTo<SettingsController>().FromNewComponentOnNewGameObject().AsSingle();
 		}
 	}
 }

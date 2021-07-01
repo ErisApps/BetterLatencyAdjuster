@@ -1,5 +1,6 @@
 using System;
 using BeatSaberMarkupLanguage.Attributes;
+using BeatSaberMarkupLanguage.Settings;
 using IPA.Utilities;
 using SiraUtil.Tools;
 using TMPro;
@@ -10,7 +11,7 @@ using Object = UnityEngine.Object;
 
 namespace BetterLatencyAdjuster.Settings.UI
 {
-	internal class SettingsController : MonoBehaviour
+	internal class SettingsController : MonoBehaviour, IInitializable, IDisposable
 	{
 		private static readonly FieldAccessor<MenuTransitionsHelper, MainSettingsModelSO>.Accessor MainSettingsModelAccessor =
 			FieldAccessor<MenuTransitionsHelper, MainSettingsModelSO>.GetAccessor("_mainSettingsModel");
@@ -70,6 +71,16 @@ namespace BetterLatencyAdjuster.Settings.UI
 			_siraLog.Logger.Notice($"Override: {OverrideAudioLatency}; Latency: {AudioLatency}");
 		}
 
+		public void Initialize()
+		{
+			BSMLSettings.instance.AddSettingsMenu("<size=85%>BetterLatencyAdjuster", "BetterLatencyAdjuster.Settings.UI.Settings.bsml", this);
+		}
+
+		public void Dispose()
+		{
+			BSMLSettings.instance?.RemoveSettingsMenu(this);
+		}
+
 		[UIComponent("root")]
 		private RectTransform _rootTransform = null!;
 
@@ -94,8 +105,8 @@ namespace BetterLatencyAdjuster.Settings.UI
 			_currentInterval = INTERVAL;
 			_countDownText.text = _currentInterval.ToString("F0");
 
-			gameObject.name = "BLAdjusterSettings";
-			transform.SetParent(_rootTransform);
+			//gameObject.name = "BLAdjusterSettings";
+			//transform.SetParent(_rootTransform);
 			_audioSource.transform.SetParent(_rootTransform);
 		}
 
